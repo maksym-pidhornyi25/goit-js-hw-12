@@ -30,3 +30,12 @@ main {
 main:has(.back-link) {
   text-align: center;
 }
+
+.container {
+  width: 1128px;
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+}

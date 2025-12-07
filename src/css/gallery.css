@@ -1,0 +1,30 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 32px;
+  width: 100%;
+}
+
+.gallery-item {
+  width: calc((100% - 2 * 24px) / 3);
+  height: 200px;
+  border: 1px solid #808080;
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 4px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33333;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  text-align: center;
+}
