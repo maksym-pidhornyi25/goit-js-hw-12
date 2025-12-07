@@ -1,27 +1,22 @@
 import axios from 'axios';
 
-const API_KEY = '53582990-021f86ccd386d56203414afea';
+export const PER_PAGE = 15;
 
-const BASE_URL = 'https://pixabay.com/api/';
+export async function getImagesByQuery(query, page) {
+  const BASE_URL = 'https://pixabay.com/api/';
+  const API_KEY = '53582990-021f86ccd386d56203414afea';
 
-const PER_PAGE = 15;
+  const response = await axios.get(BASE_URL, {
+    params: {
+      key: API_KEY,
+      q: query,
+      image_type: 'photo',
+      orientation: 'horizontal',
+      safesearch: true,
+      page,
+      per_page: PER_PAGE,
+    },
+  });
 
-export async function getImagesByQuery(query, page = 1) {
-  try {
-    const response = await axios.get(BASE_URL, {
-      params: {
-        key: API_KEY,
-        q: query,
-        image_type: 'photo',
-        orientation: 'horizontal',
-        safesearch: true,
-        per_page: PER_PAGE,
-        page: page,
-      },
-    });
-    return response.data;
-  } catch (error) {
-    console.error('Помилка запиту до Pixabay:', error);
-    throw error;
-  }
+  return response.data;
 }
